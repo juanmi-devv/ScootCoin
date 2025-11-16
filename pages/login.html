@@ -8,18 +8,26 @@
 </head>
 <body>
     <!--A esta pagina le faltaría alinearla, aplicar color, añadir funcionalidad además de botón de retorno a inicio-->
-    <h1>Login</h1>
-    <main>
-        <h3>En esta sección de la página va a ser donde el usuario va a poder sesión con su cuenta para poder acceder a los diferentes servicios que haya obtenido</h3>
+    <main style="text-align: center;">
+    <form action="#" method="get">
+    <section style="align-items: center;">
+    <h1>Regístrate</h1>
     <div>
         <img src="../Imagenes/Vector.svg" alt="Imagen de login">
     </div>
-    <section style="align-items: center;">
-    <input type="text" placeholder="Usuario">
-        <input type="text" placeholder="Password">
+    <!--El patrón requiere que la longitud este entre 5 y 50 caracteres, exige caracteres que no coincidad con @, require @, exige el caracter ., y la extensión debe de tener solamente letras, mínimo 2 -->
+    <label><br> 
+        <input type="email" placeholder="Ej: usuario@gmail.com" minlength="5" maxlength="50" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" required>
+    </label><br><br>
+    <!--El patrón requiere que la longitud mínima sea 6 caracteres-->
+    <label>
+        <input type="text" placeholder="Password" pattern=".{6,}" required>
+    </label><br><br>
+    <label>
+        <input type="submit" value="Iniciar sesión">
+    </label>
     </section>
-    
+    </form>
     </main>
-    
 </body>
 </html>
