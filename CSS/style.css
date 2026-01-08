@@ -1,47 +1,124 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    
+    /* IMPORTANTE: Esto empuja el contenido hacia abajo para que no se oculte 
+       detrás del encabezado fijo. Si sientes mucho espacio, baja este valor (ej. 140px) */
+    padding-top: 160px; 
+}
 
+/* --- CONTENEDOR FIJO (Requiere el <div> en el HTML) --- */
+.contenedor-fijo {
+    position: fixed; /* Esto lo pega al techo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;   /* Asegura que esté por encima de todo */
+    background-color: #ffffff; /* Fondo blanco para todo el bloque */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra suave general */
+}
 
+/* --- HEADER --- */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 40px;
+    background-color: #ffffff;
+    
+    /* Ajuste para pantallas pequeñas / Zoom */
+    flex-wrap: wrap; 
+    gap: 15px; 
+}
+
+.top-header {
+    flex: 0 0 auto;
 }
 
 form {
+    flex: 1;
     display: flex;
-    align-items: center;
-    text-align: center;
+    justify-content: center;
+    min-width: 250px;
 }
 
 form input {
-    padding: 5px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: cyan;
+    width: 100%;
+    max-width: 500px;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: #f0f8ff;
+    outline: none;
+    transition: 0.3s;
 }
 
-
-nav {
-    display: flexbox;
-    align-items: center;
-    text-align: center;
-    margin: 0 15px;
-    text-decoration: none;
+form input:focus {
+    background-color: #fff;
+    border-color: aqua;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
 }
 
 .carrazo {
-    margin-right: 60px;
-    width: 40%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+.carrazo img {
+    width: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
+.carrazo img:hover {
+    transform: scale(1.1);
+}
+
+/* --- NAVEGACIÓN (NAV) --- */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* CAMBIO: Fondo blanco en vez de negro */
+    background-color: #ffffff; 
+    
+    /* Líneas sutiles para separar el menú visualmente */
+    border-top: 1px solid #f0f0f0;
+    /* border-bottom: 1px solid #f0f0f0; (Opcional si quieres línea abajo también) */
+
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 40px;
+    padding: 10px 0; /* Un poco más de aire */
+}
+
+nav a {
+    /* CAMBIO: Texto oscuro para verse sobre fondo blanco */
+    color: #333333; 
+    
+    text-decoration: none;
+    margin: 5px 15px;
+    font-size: 14px; /* Un pelín más grande */
+    text-transform: uppercase;
+    font-weight: 700; /* Letra más gordita */
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+
+/* Efecto al pasar el mouse */
+nav a:hover {
+    color: aqua; /* Color turquesa al pasar el ratón */
+}
+
+/* Footer */
 footer {
     text-align: center;
+    padding: 20px;
+    background-color: #e0e0e0;
+    margin-top: 20px;
 }
