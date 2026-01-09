@@ -1,44 +1,38 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    
-    /* IMPORTANTE: Esto empuja el contenido hacia abajo para que no se oculte 
-       detrás del encabezado fijo. Si sientes mucho espacio, baja este valor (ej. 140px) */
     padding-top: 160px; 
 }
 
-/* --- CONTENEDOR FIJO (Requiere el <div> en el HTML) --- */
 .contenedor-fijo {
-    position: fixed; /* Esto lo pega al techo */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;   /* Asegura que esté por encima de todo */
+    z-index: 1000;   /* Está por encima de todo */
     background-color: #ffffff; /* Fondo blanco para todo el bloque */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra suave general */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* --- HEADER --- */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
     background-color: #ffffff;
-    
-    /* Ajuste para pantallas pequeñas / Zoom */
+    /* Se adapta al espacio de la pantalla */
     flex-wrap: wrap; 
     gap: 15px; 
 }
 
 .top-header {
-    flex: 0 0 auto;
+    flex: 0 0 auto; /* Mantiene el tamaño original.*/
 }
 
 form {
-    flex: 1;
+    flex: 1; /*flexible para llenar el espacio*/
     display: flex;
     justify-content: center;
     min-width: 250px;
@@ -51,21 +45,21 @@ form input {
     border: 1px solid #ddd;
     border-radius: 20px;
     background-color: #f0f8ff;
-    outline: none;
-    transition: 0.3s;
+    outline: none; /*elimina el contorno.*/
+    transition: 0.3s; /*transición suave*/
 }
 
-form input:focus {
+form input:focus { /*al pulsar en la barra de búsqueda se cambia el color del borde siendo fondo blanco pero creando un sombreado*/
     background-color: #fff;
     border-color: aqua;
     box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
-}
+} /*el objetivo es crear un efecto de enfoque*/
 
 .carrazo {
     display: flex;
     align-items: center;
     gap: 20px;
-    flex-shrink: 0;
+    flex-shrink: 0; /*no se encoje*/
 }
 
 .carrazo img {
@@ -78,44 +72,36 @@ form input:focus {
     transform: scale(1.1);
 }
 
-/* --- NAVEGACIÓN (NAV) --- */
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    /* CAMBIO: Fondo blanco en vez de negro */
-    background-color: #ffffff; 
-    
-    /* Líneas sutiles para separar el menú visualmente */
+    background-color: #ffffff;
+    /* Líneas suaves para separar el menú*/
     border-top: 1px solid #f0f0f0;
-    /* border-bottom: 1px solid #f0f0f0; (Opcional si quieres línea abajo también) */
-
+    
     flex-wrap: wrap;
     height: auto;
     min-height: 40px;
-    padding: 10px 0; /* Un poco más de aire */
+    padding: 10px 0;
 }
 
 nav a {
-    /* CAMBIO: Texto oscuro para verse sobre fondo blanco */
     color: #333333; 
-    
     text-decoration: none;
     margin: 5px 15px;
-    font-size: 14px; /* Un pelín más grande */
-    text-transform: uppercase;
-    font-weight: 700; /* Letra más gordita */
-    white-space: nowrap;
+    font-size: 14px;
+    text-transform: uppercase; /*cambio a mayuscula*/
+    font-weight: 700; /* Letra más gruesa*/
+    white-space: nowrap; /*el texto no se divide en varias lineas*/
     transition: color 0.3s;
 }
 
-/* Efecto al pasar el mouse */
+/* Efecto al pasar el puntero */
 nav a:hover {
-    color: aqua; /* Color turquesa al pasar el ratón */
+    color: aqua;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 20px;
