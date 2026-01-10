@@ -12,8 +12,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;   /* Está por encima de todo */
-    background-color: #ffffff; /* Fondo blanco para todo el bloque */
+    z-index: 1000;
+    background-color: #ffffff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
@@ -29,7 +29,7 @@ header {
 }
 
 .top-header {
-    flex: 0 0 auto; /* Mantiene el tamaño original.*/
+    flex: 0 0 auto;
 }
 
 form {
@@ -46,15 +46,15 @@ form input {
     border: 1px solid #ddd;
     border-radius: 20px;
     background-color: #f0f8ff;
-    outline: none; /*elimina el contorno.*/
-    transition: 0.3s; /*transición suave*/
+    outline: none;
+    transition: 0.3s;
 }
 
 form input:focus { /*al pulsar en la barra de búsqueda se cambia el color del borde siendo fondo blanco pero creando un sombreado*/
     background-color: #fff;
     border-color: aqua;
     box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
-} /*el objetivo es crear un efecto de enfoque*/
+}
 
 .carrazo {
     display: flex;
@@ -92,13 +92,84 @@ nav a {
     text-decoration: none;
     margin: 5px 15px;
     font-size: 14px;
-    text-transform: uppercase; /*cambio a mayuscula*/
-    font-weight: 700; /* Letra más gruesa*/
-    white-space: nowrap; /*el texto no se divide en varias lineas*/
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
     transition: color 0.3s;
 }
 
-/* Efecto al pasar el puntero */
 nav a:hover {
     color: aqua;
 }
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    /* Crea columnas 3 columnas del mismo tamaño*/
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+main h1 {
+    grid-column: 1 / -1; /* Hace que el título ocupe todo el ancho*/
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+main section {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 2px solid transparent; /* Borde invisible para evitar saltos al hacer hover */
+    
+    /* Flex para centrar contenido verticalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease; /* ease hace que tenga una curva de velocidad la transición*/
+    cursor: pointer;
+}
+
+main section:hover {
+    transform: translateY(-10px); /* La tarjeta flota hacia arriba */
+    background-color: #f0fbff;
+    border-color: aqua;
+    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.2);
+}
+
+main section h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+main section:hover h3 {
+    color: #00bcd4; /* Cambia el color del texto al hacer hover */
+}
+
+
+main section img {
+    width: 100%;
+    max-width: 180px;
+    height: 180px;
+    object-fit: contain; /* Ajusta la imagen sin recortarla ni deformarla */
+    margin-top: 15px;
+    transition: transform 0.3s ease;
+}
+
+main section:hover img {
+    transform: scale(1.1);
+}
+
+
+
+

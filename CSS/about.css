@@ -2,8 +2,9 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
     padding-top: 160px; 
+    color: #333;
 }
 
 .contenedor-fijo {
@@ -11,8 +12,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;   /* Está por encima de todo */
-    background-color: #ffffff; /* Fondo blanco para todo el bloque */
+    z-index: 1000;
+    background-color: #ffffff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
@@ -32,7 +33,7 @@ header {
 }
 
 form {
-    flex: 1; /*flexible para llenar el espacio*/
+    flex: 1;
     display: flex;
     justify-content: center;
     min-width: 250px;
@@ -45,15 +46,15 @@ form input {
     border: 1px solid #ddd;
     border-radius: 20px;
     background-color: #f0f8ff;
-    outline: none; /*elimina el contorno.*/
-    transition: 0.3s; /*transición suave*/
+    outline: none;
+    transition: 0.3s;
 }
 
 form input:focus { /*al pulsar en la barra de búsqueda se cambia el color del borde siendo fondo blanco pero creando un sombreado*/
     background-color: #fff;
     border-color: aqua;
     box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
-} /*el objetivo es crear un efecto de enfoque*/
+} 
 
 .carrazo {
     display: flex;
@@ -78,8 +79,7 @@ nav {
     align-items: center;
     background-color: #ffffff;
     /* Líneas suaves para separar el menú*/
-    border-top: 1px solid #f0f0f0;
-    
+    border-top: 1px solid #f0f0f0;  
     flex-wrap: wrap;
     height: auto;
     min-height: 40px;
@@ -91,7 +91,7 @@ nav a {
     text-decoration: none;
     margin: 5px 15px;
     font-size: 14px;
-    text-transform: uppercase; /*cambio a mayuscula*/
+    text-transform: uppercase;
     font-weight: 700; /* Letra más gruesa*/
     white-space: nowrap; /*el texto no se divide en varias lineas*/
     transition: color 0.3s;
@@ -100,4 +100,56 @@ nav a {
 /* Efecto al pasar el puntero */
 nav a:hover {
     color: aqua;
+}
+
+
+main h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #000;
+}
+
+main nav {
+    border-top: none; /* quitar la línea gris que heredaba del header*/
+    background-color: transparent; /* Fondo transparente */
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+main nav img {
+    width: 300px; /* Ancho fijo para uniformidad */
+    height: 200px; /* Altura fija para que todas las imagenes se vean igual */
+    object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformarla */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+main nav img:hover {
+    transform: translateY(-5px); /* Efecto de flotar al pasar el ratón */
+}
+
+
+main article {
+    max-width: 1000px;
+    /* centra el bloque en la pantalla automáticamente */
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    text-align: justify;
+    line-height: 1.8;
+    color: #444;
+}
+
+main article h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+main article p {
+    margin-bottom: 20px; /* Espacio entre párrafos */
 }
